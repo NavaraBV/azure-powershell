@@ -3,8 +3,6 @@ variables:
   WindowsImage: 'Smart Platforms Windows-2019'
   LinuxName: linux
   LinuxImage: 'Smart Platforms Ubuntu-20.04'
-  MacOSName: macOS
-  MacOSImage: macOS-10.14
   TestFramework: netcoreapp2.1
   TestTarget: Test
   Configuration: Debug
@@ -35,11 +33,8 @@ jobs:
       linux:
         OSName: ${{ variables.LinuxName }}
         ImageName: ${{ variables.LinuxImage }}
-      macOS:
-        OSName: ${{ variables.MacOSName }}
-        ImageName: ${{ variables.MacOSImage }}
   pool:
-    vmImage: $(ImageName)
+    name: $(ImageName)
 
   steps:
   - template: util/build-steps.yml
@@ -61,11 +56,8 @@ jobs:
       linux:
         OSName: ${{ variables.LinuxName }}
         ImageName: ${{ variables.LinuxImage }}
-      macOS:	
-        OSName: ${{ variables.MacOSName }}	
-        ImageName: ${{ variables.MacOSImage }}
   pool:
-    vmImage: $(ImageName)
+    name: $(ImageName)
 
   steps:
   - template: util/analyze-steps.yml
@@ -86,11 +78,8 @@ jobs:
       linux:
         OSName: ${{ variables.LinuxName }}
         ImageName: ${{ variables.LinuxImage }}
-      macOS:	
-        OSName: ${{ variables.MacOSName }}	
-        ImageName: ${{ variables.MacOSImage }}
   pool:
-    vmImage: $(ImageName)
+    name: $(ImageName)
 
   steps:
   - template: util/test-steps.yml

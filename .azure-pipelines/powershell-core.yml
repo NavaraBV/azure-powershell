@@ -1,8 +1,8 @@
 variables:
   WindowsName: windows
-  WindowsImage: vs2017-win2016
+  WindowsImage: 'Smart Platforms Windows-2019'
   LinuxName: linux
-  LinuxImage: ubuntu-20.04
+  LinuxImage: 'Smart Platforms Ubuntu-20.04'
   MacOSName: macOS
   MacOSImage: macOS-10.14
   TestFramework: netcoreapp2.1
